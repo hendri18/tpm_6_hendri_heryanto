@@ -16,10 +16,10 @@ func SetupRouter(db *gorm.DB) *gin.Engine {
 	productService := &service.ProductService{ProductRepo: productRepo}
 	productHandler := &handler.ProductHandler{ProductService: productService}
 
-	router.GET("/product", productHandler.Get)
-	router.POST("/product", productHandler.Create)
-	router.PUT("/product/:id", productHandler.Update)
-	router.DELETE("/product/:id", productHandler.Delete)
+	router.GET("/products", productHandler.Get)
+	router.POST("/products", productHandler.Create)
+	router.PUT("/products/:id", productHandler.Update)
+	router.DELETE("/products/:id", productHandler.Delete)
 
 	return router
 }
